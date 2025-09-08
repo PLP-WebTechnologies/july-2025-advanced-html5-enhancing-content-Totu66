@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Mastering Forms</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; color: #222; }
+        header, main, section, footer { margin-bottom: 2rem; }
+        h1, h2, h3 { color: #2a4d69; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+        th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+        th { background: #e9ecef; }
+        fieldset { border: 1px solid #2a4d69; padding: 1rem; margin-bottom: 1rem; }
+        legend { font-weight: bold; color: #2a4d69; }
+        label { display: block; margin-top: 1rem; }
+        input, select, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }
+        .form-section { margin-bottom: 2rem; }
+        .readonly { background: #eee; }
+        .media { display: flex; gap: 2rem; align-items: center; }
+        @media (max-width: 600px) {
+            .media { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Content Showcase & User Registration</h1>
+        <p>Explore advanced HTML5 elements and a feature-rich form below.</p>
+    </header>
+    <main>
+        <section>
+            <h2>1. Organized Content with Lists</h2>
+            <h3>Top 3 Web Technologies</h3>
+            <ol>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+            </ol>
+            <h3>Benefits of Semantic HTML</h3>
+            <ul>
+                <li>Improved accessibility</li>
+                <li>Better SEO</li>
+                <li>Easier maintenance</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2. Data Representation with Tables</h2>
+            <table aria-label="Sample Course Table">
+                <caption>Sample Course Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Topic</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>HTML5 Basics</td>
+                        <td>2 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>CSS3 Styling</td>
+                        <td>2 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>JavaScript Essentials</td>
+                        <td>3 hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>3. Media Embedding</h2>
+            <div class="media">
+                <figure>
+                    <img src="https://via.placeholder.com/200x120.png?text=HTML5+Image" alt="Sample HTML5 Image" width="200" height="120">
+                    <figcaption>Sample Image</figcaption>
+                </figure>
+                <figure>
+                    <audio controls>
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <figcaption>Sample Audio</figcaption>
+                </figure>
+                <figure>
+                    <video width="200" height="120" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Sample Video</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <h2>4. User Registration Form</h2>
+            <form action="#" method="post" autocomplete="on" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="e.g. Jane Doe" required minlength="3" autocomplete="name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" required autocomplete="email">
+
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Account Details</legend>
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required pattern="^[a-zA-Z0-9_]{5,15}$" minlength="5" maxlength="15" autocomplete="username">
+                    <small>5-15 characters, letters, numbers, or underscores</small>
+
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required minlength="8" autocomplete="new-password">
+
+                    <label for="confirm">Confirm Password *</label>
+                    <input type="password" id="confirm" name="confirm" placeholder="Re-enter your password" required minlength="8" autocomplete="new-password">
+                </fieldset>
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ke">Kenya</option>
+                        <option value="in">India</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" rows="3" placeholder="Tell us about yourself" maxlength="200"></textarea>
+
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        Subscribe to newsletter
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Read-only Example</legend>
+                    <label for="refcode">Referral Code</label>
+                    <input type="text" id="refcode" name="refcode" value="PLP2025" readonly class="readonly">
+                </fieldset>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 HTML5 Advanced Assignment. All rights reserved.</p>
+    </footer>
+</body>
+</html>
